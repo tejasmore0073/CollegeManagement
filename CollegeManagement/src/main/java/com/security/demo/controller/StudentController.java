@@ -2,6 +2,8 @@ package com.security.demo.controller;
 
 import java.util.List;
 
+import javax.naming.InvalidNameException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +27,7 @@ public class StudentController {
 	private StudentService ss;
 	
 	@PostMapping("add")
-	public void add(@RequestBody StudentDTORequest s)
+	public void add(@RequestBody StudentDTORequest s) throws InvalidNameException
 	{
 		ss.add(s);
 	}
